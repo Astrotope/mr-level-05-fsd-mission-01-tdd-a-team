@@ -8,4 +8,3 @@ describe('User API Tests', () => {
    });
   test.todo('should fetch a user by ID');
   test.todo('should delete a user');
-});
