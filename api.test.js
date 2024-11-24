@@ -1,5 +1,5 @@
 const { createUser } = require('./api');  // Import createUser from api.js
- 
+
 describe('User API Tests', () => {
   test('should create a new user', () => {
     const newUser = { id: 1, name: 'John Doe' };
