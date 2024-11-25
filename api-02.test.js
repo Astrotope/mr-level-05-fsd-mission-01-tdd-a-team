@@ -1,4 +1,4 @@
-const { createUser } = require('./api');  // Import createUser from api.js
+const { createUser } = require('./api-02');  // Import createUser from api.js
 
 describe('User API Tests', () => {
   test('should create a new user', () => {
