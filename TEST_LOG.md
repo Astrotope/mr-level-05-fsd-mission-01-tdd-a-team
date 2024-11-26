@@ -1,5 +1,6 @@
 # (1) ToDo Test Suites Created and Passing...
 
+```bash
 npm test
 
 > feature-api-03@0.0.1 test
@@ -54,4 +55,5 @@ Tests:       36 todo, 36 total
 Snapshots:   0 total
 Time:        0.498 s
 Ran all test suites.
+```
 
