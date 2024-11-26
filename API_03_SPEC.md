@@ -61,7 +61,7 @@
       - Example: $10.135 → $10.14 (nearest even number is 14).
   - Financial Compliance: Many accounting systems and regulations recommend or require the bankers rounding method.
 
-- The error output in the example is uninformative, and will make it hard to track down faults with the API in production, which will impact the customer experience.
+- The example error output in the example is uninformative, and will make it hard to track down faults with the API in production, which will impact the customer experience.
   - I suggest the error message specifies the exact reason the API call failed. So the frontend can give an informative response, as to why the API call failed.
     - For example;
       - risk_range > 5 or risk_range < 1 
@@ -69,11 +69,11 @@
 
 - It is not clear if the risk_rating should be an integer value, or a decimal value.
 
-- It is not clear if the car_value should is a string or decimal/integer. Two different examples of car_value are given.
+- It is not clear if the car_value should be a string or decimal/integer or allow for both. Two different examples of car_value are given. 
   - 6614 which could be an integer or decimal. I am assuming decimal in this case, as it is money.
   - "$6,614" which is a string, and need to be converted, for the purpose of calculation.
 
-- There is also confusion about the output values monthly_premium and yearly_premium, as these are both shown as string values, and decimal values
+- There is also confusion about the output values, monthly_premium and yearly_premium, as these are both shown as string values, and decimal values
   - 27.5 which is a decimal
   - "$614," which is a string of unclear numerical value.
 
@@ -81,7 +81,7 @@
   - This is one common practice.
   - Another common practice, is to make-up the difference between the monthly_premium * 12, and the yearly_premium by adding the difference to a specific month.
   - The rounding-up approach is the closest to the specification.
-
+- We assume this API only handles one currency, New Zealand dollars, so we will expect the $ symbol only. Is this what the product owner wants?
 
 
 
