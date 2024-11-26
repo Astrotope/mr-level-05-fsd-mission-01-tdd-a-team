@@ -6,7 +6,7 @@ describe("Turners Car Auctions - Insurance API Upgrade (Main Use Case and Valid 
   test('Main use case, valid inputs', () => {
     // Description: Test for a typical valid input with car_value as an integer and risk_rating as an integer.
     const input = { car_value: 6614, risk_rating: 5 };
-    const expectedOutput = { monthly_premium: 27.5, yearly_premium: 330.0 };
+    const expectedOutput = { monthly_premium: 27.56, yearly_premium: 330.70 };
     const result = generateQuote(input);
     expect(result).toEqual(expectedOutput);
   });

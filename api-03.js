@@ -18,10 +18,13 @@ function generateQuote({ car_value, risk_rating }) {
   const yearly_premium = (car_value * risk_rating) / 100.0; 
   const monthly_premium = (yearly_premium / 12);
 
-  // Return calculated premiums in JSON format
+  // Define reusable rounding function
+  const roundToTwoDecimals = (value) => parseFloat(value.toFixed(2));
+
+  // Round premiums to 2 decimal places and return output in JSON format
   return {
-    monthly_premium,
-    yearly_premium,
+    monthly_premium: roundToTwoDecimals(monthly_premium),
+    yearly_premium: roundToTwoDecimals(yearly_premium),
   };
 }
 
