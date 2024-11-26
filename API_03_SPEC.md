@@ -2,8 +2,10 @@
 
 ### Input/Output Specification
 
-- **Input:** This API takes 2 parameters as input in JSON format that includes - the "car value" (e.g. $6,614) and "risk rating" of the driver between 1 to 5 (e.g. 5 meaning high risk).
-- **Output:** The output is a JSON format with the suggested monthly and yearly premium for the insurance policy, such as "$50", "$614,".
+- **Input:** 
+  - This API takes 2 parameters as input in JSON format that includes - the "car value" (e.g. $6,614) and "risk rating" of the driver between 1 to 5 (e.g. 5 meaning high risk).
+- **Output:** 
+  - The output is a JSON format with the suggested monthly and yearly premium for the insurance policy, such as "$50", "$614,".
 
 ### Input/Output Format Specification
 
