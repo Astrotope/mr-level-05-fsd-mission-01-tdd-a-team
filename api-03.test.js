@@ -1,10 +1,13 @@
 describe("Turners Car Auctions - Insurance API Upgrade (Main Use Case and Valid Inputs)", () => {
 
   // Test case #1 - Main use case with valid inputs
-  test.todo("Main use case, valid inputs");
+  test('Main use case, valid inputs', () => {
     // Description: Test for a typical valid input with car_value as an integer and risk_rating as an integer.
-    // Input: { "car_value": 6614, "risk_rating": 5 }
-    // Output: { "monthly_premium": 27.50, "yearly_premium": 330.00 }
+    const input = { car_value: 6614, risk_rating: 5 };
+    const expectedOutput = { monthly_premium: 27.5, yearly_premium: 330.0 };
+    const result = generateQuote(input);
+    expect(result).toEqual(expectedOutput);
+  });
 
   // Test case #3 - Maximum risk rating
   test.todo("Maximum risk rating");
