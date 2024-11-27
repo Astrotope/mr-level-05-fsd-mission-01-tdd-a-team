@@ -4,15 +4,17 @@ function calculateCarValue(input) {
 
   // [CM] Check that the input isn't null, or undefined, or not a valid object. [Complete][HS]
   // [CM] Use descriptive error messages. [Complete][HS]
+
   // Check if input is null, undefined, or not an object
   if (!input || typeof input !== "object") {
       return { error: "error", description: "Input is null, undefined, or not a valid object. It must be a valid JSON object" };
   }
- 
+
   // Destructure the input
   const { model, year } = input; // Destructure the JSON input. We assume the object has two keys, how do we handle if only one key, or an empty JSON object is sent.
 
  // [CM] Check keys are actually in destructured JSON [Complete][HS]
+
   // Check if required keys are missing
   if (model === undefined || year === undefined) {
       return { error: "error", description: "Missing required keys: model or year" };
@@ -49,14 +51,14 @@ function calculateCarValue(input) {
       // console.log(`Character: ${char}, Value: ${charValue}`); // Log each character's position value
       return sum + charValue;
     }, 0); // 0 is the initial value for the .reduce() method.
- 
+
   // console.log("Character Value Sum:", charValueSum); // Log total sum of positions
  
   // Calculate car value
   const carValue = charValueSum * 100 + parsedYear;
   // console.log("Car Value before adding year:", charValueSum * 100); // Log car value before adding the year
   // console.log("Final Car Value:", carValue); // Log final car value
- 
+
   return { car_value: carValue };
 }
  
