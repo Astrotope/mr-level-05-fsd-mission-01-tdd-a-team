@@ -3,6 +3,8 @@
  * @param {number} amount - The monetary value to round.
  * @returns {number} - The rounded value to two decimal places following Banker's Rounding rules.
  */
+
+// [DW] Could maybe change this function name to something shorter like "bankersRoundingRule" but otherwise the comment above helps explain.
 function bankersRoundingToTwoDecimals(amount) {
   const factor = 100; // To scale for two decimal places
   const scaledAmount = amount * factor;
@@ -43,6 +45,7 @@ function parseCurrency(value) {
       throw new Error('Input must be a string or a number.');
   }
 
+  // [DW] Good comment to help understand what this is doing, 0-9 I understand but maybe comment why "-+e".
   // Filter valid characters and join back into a string
   const sanitizedValue = [...value]
       .filter((char) => '0123456789.-+e'.includes(char))
@@ -111,6 +114,7 @@ function generateQuote(input) {
     return { error: "Invalid risk rating. Risk rating must be an integer between 1 and 5." };
   }
 
+  // [DW] Maybe mention why the use of integer 12 is there.
   // Business rule logic: Premium calculations with bankers rounding
   const yearly_premium = bankersRoundingToTwoDecimals((parsedCarValue * parsedRiskRating) / 100.0); 
   const monthly_premium = bankersRoundingToTwoDecimals(yearly_premium / 12);
