@@ -13,7 +13,12 @@ app.use(cors());
 // Routes
 app.use('/api', apiRoutes);
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+// Conditionally start the server only if we're not in a test environment
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
+
+// Export the app, not the server instance
+module.exports = app;

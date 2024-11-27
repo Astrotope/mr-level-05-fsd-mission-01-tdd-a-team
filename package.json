@@ -10,7 +10,7 @@
 
   "scripts": {
 
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
 
   },
 
@@ -22,7 +22,9 @@
 
   "devDependencies": {
 
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+
+    "supertest": "^7.0.0"
 
   },
 
