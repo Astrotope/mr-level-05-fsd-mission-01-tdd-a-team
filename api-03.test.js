@@ -25,7 +25,7 @@ describe("Turners Car Auctions - Insurance API Upgrade (Main Use Case and Valid 
     const result = generateQuote(input);
     expect(result).toEqual(expectedOutput);
   });
-  
+
   // Test case #17
   test("car_value as string without '$'", () => {
     const input = { car_value: "6,614", risk_rating: 5 };
@@ -357,4 +357,4 @@ describe("Turners Car Auctions - Insurance API Upgrade (Invalid Input Types)", (
     expect(result).toEqual(expectedOutput);
   });
 
-});
+})
