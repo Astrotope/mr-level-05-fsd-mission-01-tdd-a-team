@@ -13,7 +13,6 @@ Edge Cases: Inputs with similar but not exact keywords to test accuracy in keywo
 const { calculateRiskRating } = require("./api-02");
 
 describe("Risk Rating API Tests", () => {
-
   // Coverage Type: Positive
   test("should return a risk rating of 3 for valid input with 3 keywords", () => {
     const input = {
@@ -73,7 +72,10 @@ describe("Risk Rating API Tests", () => {
     };
 
     const result = calculateRiskRating(input);
-    expect(result).toEqual({ error: "there is an error" });
+    expect(result).toEqual({
+      description: "Missing required key: claim_history.",
+      error: "error",
+    });
   });
 
   // Coverage Type: Positive
@@ -87,23 +89,25 @@ describe("Risk Rating API Tests", () => {
   });
 
   // Coverage Type: Negative
-  test('should return an error for non-string claim_history input', () => {
-    const input = { 
-      claim_history: 12345 
+  test("should return an error for non-string claim_history input", () => {
+    const input = {
+      claim_history: 12345,
     };
 
     const result = calculateRiskRating(input);
-    expect(result).toEqual({ error: 'there is an error' });
+    expect(result).toEqual({
+      error: "error",
+      description: "claim_history must be a string.",
+    });
   });
 
   // Coverage Type: Edge Case
-  test('should return a risk rating of 1 for input with similar words but no exact keyword match', () => {
-    const input = { 
-      claim_history: "collision but no keyword match" 
+  test("should return a risk rating of 1 for input with similar words but no exact keyword match", () => {
+    const input = {
+      claim_history: "collision but no keyword match",
     };
 
     const result = calculateRiskRating(input);
     expect(result).toEqual({ risk_rating: 1 });
   });
-
 });
