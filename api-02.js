@@ -1,4 +1,5 @@
 function calculateRiskRating(input) {
+
   // Debugging log for received input
   console.log("Received input:", input); // [HS] Consider removing or disabling debugging logs in production for cleaner output.
 
@@ -42,11 +43,13 @@ function calculateRiskRating(input) {
     const matches = text.match(regex);
     if (matches) {
       riskCount += matches.length; // [HS] Great job adding the count of matches to `riskCount`.
+
     }
   });
 
   // Risk rating must be between 1 and 5
   const riskRating = Math.min(Math.max(riskCount, 1), 5);
+
   // [HS] Smart use of `Math.min` and `Math.max` to ensure the risk rating is within the desired range.
 
   console.log("Calculated risk rating:", riskRating); // Debugging log for risk rating
@@ -55,5 +58,6 @@ function calculateRiskRating(input) {
 }
 
 module.exports = { calculateRiskRating }; // [HS] Proper use of `module.exports` for reusability in other files.
+
 
 
