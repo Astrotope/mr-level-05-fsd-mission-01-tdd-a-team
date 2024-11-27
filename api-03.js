@@ -4,8 +4,8 @@
  * @returns {number} - The rounded value to two decimal places following Banker's Rounding rules.
  */
 
-// [DW] Could maybe change this function name to something shorter like "bankersRoundingRule" but otherwise the comment above helps explain.
-function bankersRoundingToTwoDecimals(amount) {
+// [DW] Could maybe change this function name to something shorter like "bankersRoundingRule" but otherwise the comment above helps explain. [Complete][CM]
+function bankersRoundingRule(amount) {
   const factor = 100; // To scale for two decimal places
   const scaledAmount = amount * factor;
   const floored = Math.floor(scaledAmount);
@@ -45,7 +45,9 @@ function parseCurrency(value) {
       throw new Error('Input must be a string or a number.');
   }
 
-  // [DW] Good comment to help understand what this is doing, 0-9 I understand but maybe comment why "-+e".
+  // [DW] Good comment to help understand what this is doing, 0-9 I understand but maybe comment why "-+e". [Complete][CM]
+  // The '+e' are included as valid charater so that I can use scientific notation '1e+365' for one of my test cases, testing large values.
+  // The other character are just to make sure I get a valide number '0123456789.-'
   // Filter valid characters and join back into a string
   const sanitizedValue = [...value]
       .filter((char) => '0123456789.-+e'.includes(char))
@@ -116,8 +118,8 @@ function generateQuote(input) {
 
   // [DW] Maybe mention why the use of integer 12 is there.
   // Business rule logic: Premium calculations with bankers rounding
-  const yearly_premium = bankersRoundingToTwoDecimals((parsedCarValue * parsedRiskRating) / 100.0); 
-  const monthly_premium = bankersRoundingToTwoDecimals(yearly_premium / 12);
+  const yearly_premium = bankersRoundingRule((parsedCarValue * parsedRiskRating) / 100.0); 
+  const monthly_premium = bankersRoundingRule(yearly_premium / 12);
 
   // Define reusable rounding function
   const roundToTwoDecimals = (value) => parseFloat(value.toFixed(2));
