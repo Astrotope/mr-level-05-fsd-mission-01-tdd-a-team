@@ -30,7 +30,7 @@ function bankersRoundingRule(amount) {
  * Handles both string inputs with currency formatting and numeric inputs directly.
  * Always returns a float, even if an integer is provided.
  * Removes non-numeric characters such as currency symbols and thousands separators for strings.
- * 
+ *
  * @param {string|number} value - The currency value to parse (e.g., "$6,614", 12345, 12345.67).
  * @returns {number} - The parsed numeric value as a float.
  * @throws {Error} - Throws an error if the input is neither a string nor a number.
@@ -65,14 +65,14 @@ function parseCurrency(value) {
  */
 function generateQuote(input) {
 
- 
+
   console.log("Received input:", input); // For debugging when wrapped in express.js so we can check what is passed in from the frontend
 
   // Check if input is null, undefined, or not an object
   if (!input || typeof input !== "object") {
       return { error: "Input is null, undefined, or not a valid object. It must be a valid JSON object" };
   }
- 
+
   // Destructure the input
   const { car_value, risk_rating } = input; // Destructure the JSON input.
 
@@ -91,7 +91,7 @@ function generateQuote(input) {
   console.log("Received risk_rating:", risk_rating);  // For debugging when wrapped in express.js
 
   // Parse the inputs to numbers
-  const parsedCarValue = parseCurrency(car_value); 
+  const parsedCarValue = parseCurrency(car_value);
   const parsedRiskRating = parseInt(risk_rating);
 
   // Check for NaN after parsing
@@ -118,7 +118,7 @@ function generateQuote(input) {
 
   // [DW] Maybe mention why the use of integer 12 is there.
   // Business rule logic: Premium calculations with bankers rounding
-  const yearly_premium = bankersRoundingRule((parsedCarValue * parsedRiskRating) / 100.0); 
+  const yearly_premium = bankersRoundingRule((parsedCarValue * parsedRiskRating) / 100.0);
   const monthly_premium = bankersRoundingRule(yearly_premium / 12);
 
   // Define reusable rounding function
@@ -131,4 +131,4 @@ function generateQuote(input) {
   };
 }
 
-module.exports = { generateQuote };
+module.exports = generateQuote;
