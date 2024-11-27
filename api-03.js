@@ -96,7 +96,7 @@ function generateQuote(input) {
 
   // Check for NaN after parsing
   if (isNaN(parsedCarValue)) {
-    console.error('Invalid car value. Car value must be a number.');
+    console.log('Invalid car value. Car value must be a number.');
     return { error: "Invalid car value. Car value must be a number." };
   }
 
