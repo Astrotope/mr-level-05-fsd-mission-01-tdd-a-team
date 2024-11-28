@@ -3,8 +3,17 @@
 ## ToDo:
 
 - [x] [01] Create GitHub Repository
-- [x] [02] Create PAT token to allow developers to have read/write access to repo. contents and pull-requests.
-- [x] [03] Create PAT token to allow management of GitHub workflows with read/write workflow, content, and pull-request permission.
+- [x] [02] Create PAT token to allow developers to have read/write access to repo. contents and pull requests.
+- [x] [03] Setup JIRA, & MS Teams Chat Group
+- [x] [04] Setup GitHub (Auto-test), and Developer Local Workspaces
+- [x] [05] Read Spec, Write Test Cases, Code with TDD  Units Tests / API Code
+- [x] [06] Create Backend, Frontend, Integration Tests
+- [x] [07] PR’s, Code Review, & Merge to Main
+
+
+ Presentation Slides, Demo, Submission
+![image](https://github.com/user-attachments/assets/d084248b-63b6-42f9-b738-fa6a808f91f4)
+
 
 ## Top contributors:
 
