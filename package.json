@@ -1,10 +1,11 @@
 {
 
-  "name": "backend",
+
+  "name": "turners insurance api's",
 
   "version": "0.0.1",
 
-  "description": "- [x] [01] Create GitHub Repository\r - [x] [02] Create PAT token to allow developers to have read/write access to repo. contents and pull-requests.\r - [x] [03] Create PAT token to allow management of GitHub workflows with read/write workflow, content, and pull-request permission.",
+  "description": "Turners Car Insurance API Development",
 
   "main": "index.js",
 
@@ -16,7 +17,9 @@
 
   "keywords": [],
 
+
   "author": "The A-Team",
+
 
   "license": "MIT",
 
@@ -53,6 +56,14 @@
     "express": "^4.21.1",
 
     "multer": "^1.4.5-lts.1"
+
+  },
+
+  "repository": {
+
+    "type": "git",
+
+    "url": "https://github.com/Astrotope/mr-level-05-fsd-mission-01-tdd-a-team.git"
 
   }
 
