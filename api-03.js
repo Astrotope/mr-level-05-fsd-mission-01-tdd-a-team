@@ -101,7 +101,7 @@ function generateQuote(input) {
   }
 
   if (isNaN(parsedRiskRating)) {
-    console.error('Invalid risk rating. Risk rating must be an integer between 1 and 5.');
+    console.log('Invalid risk rating. Risk rating must be an integer between 1 and 5.');
     return { error: "Invalid risk rating. Risk rating must be an integer between 1 and 5." };
   }
 
@@ -131,4 +131,4 @@ function generateQuote(input) {
   };
 }
 
-module.exports = generateQuote;
+module.exports = { generateQuote };
