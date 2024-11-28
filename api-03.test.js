@@ -1,4 +1,4 @@
-const generateQuote = require('./api-03'); // Import the generateQuote API to test.
+const { generateQuote } = require('./api-03'); // Import the generateQuote API to test.
 
 describe("Turners Car Auctions - Insurance API Upgrade (Main Use Case and Valid Inputs)", () => {
 
