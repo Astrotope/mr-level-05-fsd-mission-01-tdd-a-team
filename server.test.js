@@ -22,7 +22,8 @@ describe('Server Endpoints', () => {
   test('POST /api/generateQuote', async () => {
     const response = await request(server)
       .post('/api/generateQuote')
-      .send({ car_value: 15000, risk_rating: 3 });
+      .send({ car_value: "15000", risk_rating: "3"
+    });
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty('yearly_premium');
     expect(response.body).toHaveProperty('monthly_premium');
