@@ -10,10 +10,9 @@
 - [x] [06] Create Backend, Frontend, Integration Tests
 - [x] [07] PR’s, Code Review, & Merge to Main
 
+## Solution Architecture:
 
- Presentation Slides, Demo, Submission
-![image](https://github.com/user-attachments/assets/d084248b-63b6-42f9-b738-fa6a808f91f4)
-
+![image](https://github.com/user-attachments/assets/2aaf9c30-0c28-472d-8a34-e5b3bee1cbba)
 
 ## Top contributors:
 
